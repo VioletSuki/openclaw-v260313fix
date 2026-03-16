@@ -9,7 +9,7 @@ import {
   normalizeThinkLevel,
   normalizeVerboseLevel,
   resolveThinkingDefaultForModel,
-} from "../../../../src/auto-reply/thinking.js";
+} from "../../../../src/auto-reply/thinking-shared.js";
 import {
   DEFAULT_AGENT_ID,
   DEFAULT_MAIN_KEY,
@@ -32,14 +32,14 @@ export type SlashCommandResult = {
   content: string;
   /** Side-effect action the caller should perform after displaying the result. */
   action?:
-    | "refresh"
-    | "export"
-    | "new-session"
-    | "reset"
-    | "stop"
-    | "clear"
-    | "toggle-focus"
-    | "navigate-usage";
+  | "refresh"
+  | "export"
+  | "new-session"
+  | "reset"
+  | "stop"
+  | "clear"
+  | "toggle-focus"
+  | "navigate-usage";
   /** Optional session-level directive changes that the caller should mirror locally. */
   sessionPatch?: {
     modelOverride?: ChatModelOverride | null;
